@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src ="../jquery-1.11.3.min.js"></script>
+  <script src ="myScript.js"></script>
+  <style>
+    #space{
+      width:200px;
+      height: 6000px;
+    }
+    #window-location{
+      float:right;
+      position:absolute;
+      right:0px;
+    }
+    #window-size{
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<div id="window-location"></div>
+<div class="item">
+  <li id="item1">Event:Click Effect:hide</li>
+  <button id="item2-btn"> toggle item2 </button>
+  <li id="item2">item2</li>
+
+</div>
+
+<div class="item">
+  <li id="item1a">Event:Click Effect:show</li>
+  <li id="item2a">item2</li>
+
+</div>
+
+<form>
+  <fieldset>
+    <label for="target">Type Something:</label>
+    <input id="target" type="text">
+  </fieldset>
+</form>
+<button id="other">
+  Trigger the handler
+</button>
+
+
+
+<div id="window-size"></div>
+
+
+
+<div id="space">
+
+</div>
+</body>
+</html>
