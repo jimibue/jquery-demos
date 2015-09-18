@@ -37,14 +37,33 @@ $(document).ready(function(){
     });
     $main_nav.css({
         width:"100%",
-        height:"50px",
-        border:"1px solid grey"
+        height:"50px"
     });
 
     $main_container.append($main_nav);
 
-    $('#main-nav').append($('<ul/>'))
+    //a less readable way of adding an element but works
+    $('#main-nav').append($('<ul/>')
+            .attr({id:"main-ul"})
+            .addClass("ul")
+    );
+    //inefficient way to access something in JQUERY, here we could easy use the id
+    $('#main-nav ul').css({
+        border:"1px solid grey",
+        display:"block",
+        "background-color":"blue",
+        width:"90%",
+        height:"50px"
+    });
 
+
+    $("#main-ul").append($('<li>')
+            .addClass("main-li")
+            .css({
+                border:"1px solid red"
+            })
+            .text('home')
+    );
 
 
 
