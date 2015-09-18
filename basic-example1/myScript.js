@@ -7,30 +7,39 @@ $(document).ready(function(){
     var w  = $(window);
     var vLine = $('#vLine');
     var hLine = $('#hLine');
+    var center_me = $('#center-me');
+
+    //initial setup
+    crossHairs()
+    centerTab();
     svg.attr({
        width: function(){return $(window).innerWidth()},
         height: w.innerHeight()
     });
+    center_me.html("CENTERED!");
 
-    crossHairs();
-
+    //when window is resized
     w.resize(function(){
         crossHairs();
+        centerTab();
         svg.attr({
             width: function(){return w.innerWidth()},
             height: w.innerHeight()
         });
-
     });
 
+    //on scoll
     w.scroll(function(){
         svg.css({
             top: w.scrollTop()
+        });
+        center_me.css({
+            top: w.scrollTop() + w.innerHeight()/2 - center_me.innerHeight()/2
         })
     });
 
 
-
+    //draws vertical and horizontal lines in the middle of the screen
     function crossHairs()
     {
         vLine.attr({
@@ -47,4 +56,16 @@ $(document).ready(function(){
         });
 
     }
+    function centerTab() {
+        center_me.css({
+            left: function () {
+                return w.innerWidth() / 2 - center_me.innerWidth() / 2 + "px"
+            },
+            top: function () {
+                return w.innerHeight() / 2 + w.scrollTop() - center_me.innerHeight() / 2 + "px"
+            }
+
+        });
+    }
+
 });
