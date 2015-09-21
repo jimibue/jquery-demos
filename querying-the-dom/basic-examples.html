@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../jquery-1.11.3.min.js"></script>
+  <style>
+    .first{
+      font-size: 30px;
+    }
+    li{
+      color:black;
+    }
+    .ul{
+      font-style: italic;
+    }
+  </style>
+  <script>
+    $(document).ready( function(){
+//      children looks for immediate children of the parent
+      $('#ul1').children('li').css("color","#4d2");
+//      find will find all descendants of the selector
+      $('#ul2').find('li').css("color","#4d2");
+//      get the first item
+      //css selectors
+//      $('#ul1').find("li:nth-child(1)").addClass('first');
+//      $('#ul1').find("li:first-child").addClass('first');
+//custom jquery selector
+//      $('#ul1').children('li:first-child').addClass('first');
+      $('#ul1').children('li').first().addClass('first');
+      $('#ul1').children('li').eq(2).text("changed");//eq is 0 based index
+      $('#ul1').children('li').eq(2).next().text("changed");//eq is 0 based index
+
+      //parent only goes up a single level while parents go
+      $('li').parents('ul').removeClass('ul')
+    });
+  </script>
+</head>
+<body>
+<h1 class ="ul">header</h1>
+<ul id="ul1" class ="ul">
+  <li class="li1">1</li>
+  <li class="li1">2</li>
+  <li class="li1">3</li>
+  <li class="li1">4</li>
+  <li class="li1">
+    <ul>
+      <li>inner li item</li>
+    </ul>
+  </li>
+</ul>
+<ul id="ul2">
+  <li class="li2">1</li>
+  <li class="li2">2</li>
+  <li class="li2">
+    <ul>
+      <li>inner li item</li>
+    </ul>
+  </li>
+  <li class="li2">4</li>
+</ul>
+
+</body>
+</html>
