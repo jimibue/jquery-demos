@@ -1,0 +1,29 @@
+body{
+    margin: 10px;
+}
+dl{
+    width:500px;
+    margin:auto;
+    text-align: center;
+}
+
+dt{
+    cursor: pointer;
+    font-size: 2.0em;
+    background-color: #aaa;
+    border-bottom: 2px solid #888;
+    border-top: 2px solid #ddd;
+    padding:.2em;
+    /*margin: .5em 0;*/
+    /*666text-align: center;*/
+}
+dt:first-child{
+    border-top: none;
+}
+dt:nth-last-child(2){
+    border-bottom: none;;
+}
+dl{
+
+}
+
