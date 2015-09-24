@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../jquery-1.11.3.min.js"></script>
+</head>
+<body>
+  <article>
+    <h6>Move me to the bottom</h6>
+    <div id="x">append me after each p</div>
+    <h1>Post Goes here</h1>
+    <p>Meditation Wes Anderson ugh roof party aesthetic. American Apparel Bushwick VHS mustache yr Vice, wayfarers fap blog four loko authentic Wes Anderson wolf. Pinterest Brooklyn occupy, seitan bicycle rights food truck pug scenester ethical Echo Park iPhone American Apparel High Life actually. McSweeney's Carles flexitarian wayfarers, Kickstarter leggings Intelligentsia seitan four loko whatever mixtape forage Shoreditch gentrify. Gastropub actually kale chips master cleanse, farm-to-table twee Truffaut Godard hoodie sartorial. Blog Intelligentsia Shoreditch, jean shorts cray roof party lomo next level kogi Vice.</p>
+    <p>Try-hard master cleanse Odd Future semiotics, fashion axe brunch Portland kale chips slow-carb vegan wolf aesthetic Wes Anderson. Meditation Wes Anderson ugh roof party aesthetic. American Apparel Bushwick VHS mustache yr Vice, wayfarers fap blog four loko authentic Wes Anderson wolf. Pinterest Brooklyn occupy, seitan bicycle rights food truck pug scenester ethical Echo Park iPhone American Apparel High Life actually. McSweeney's Carles flexitarian wayfarers, Kickstarter leggings Intelligentsia seitan four loko whatever mixtape forage Shoreditch gentrify. Gastropub actually kale chips master cleanse, farm-to-table twee Truffaut Godard hoodie sartorial. Blog Intelligentsia Shoreditch, jean shorts cray roof party lomo next level kogi Vice.</p>
+  </article>
+
+  <script>
+    $(document).ready(function () {
+      var $a = $('article');
+      $a.append("$a.append");
+      $a.prepend("$a.prepend");
+      $('h1').after("$('h1').after");
+      $('p').first().before("$('p').first().before");
+
+      //bad style
+      $("<h2>YO</h2>").appendTo('article');
+
+      $('<h3></h3>',{
+          text:"Better way to append",
+          class: "yo",
+          style:"color:red"
+      }).appendTo('article');
+
+      $('<h3></h3>',{
+        text:"Better way to append",
+        class: "yo",
+        style:"color:red"
+      }).prependTo('article');
+
+      $('<h3></h3>',{
+        text:"insertAfter('h1')",
+        class: "yo",
+        style:"color:red"
+      }).insertAfter('h1');
+
+      $('p').after($('#x'));
+//      $('p').eq(0)after($('#x')); if you just wanted one
+
+
+      $('h6').appendTo('body');
+
+//      $('#x').after(function(){
+//        return $(this).prev();
+//      });
+    });
+
+
+
+
+
+  </script>
+
+</body>
+</html>
