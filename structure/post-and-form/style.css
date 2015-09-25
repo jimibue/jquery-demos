@@ -1,0 +1,35 @@
+#container{
+    width:50%;
+    display:block;
+    margin: auto;
+}
+form{
+    box-sizing: border-box;
+    width:100%;
+    background-color: #ddd;
+    padding: 20px;
+}
+form>*{
+    margin: 5px;
+}
+input{
+    width:35%;
+    height:20px;
+}
+h2{
+    margin-bottom: 20px;
+}
+
+.js #form{
+    width: inherit;
+    position:absolute;
+    top: 0;
+    display:none
+}
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+
+}
