@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<a href="#">link</a>
+<script>
+  console.log(this);
+  (function inFunction(){
+    console.log(this);
+  })();
+  var obj = {
+    log: function(){
+      console.log(this);
+    }
+  };
+
+  $('a').on('click',log);
+  $('a').on('click',obj.log);
+  $('a').on('click', $.proxy(obj.log,obj) );//much like .call
+
+  function log(event){
+    event.preventDefault();
+    console.log(this)
+  }
+
+
+
+</script>
+</body>
+</html>
