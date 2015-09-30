@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="../jquery-1.11.3.min.js"></script>
+  <style>
+    .box, .box1{
+      width:500px;
+
+      background-color: #91a7ff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <p>Disrupt forage vegan, keffiyeh mustache 90's Wes Anderson High Life Carles. Bicycle rights cred XOXO pop-up,
+    wolf selfies listicle mlkshk chillwave drinking vinegar paleo iPhone High Life roof party Marfa. Post-ironic kale
+    chips Pinterest keffiyeh Helvetica tofu. Pug lo-fi master cleanse polaroid. Kogi cliche Austin cold-pressed XOXO
+    Pitchfork, single-origin coffee Williamsburg Portland deep v. Meditation cornhole Williamsburg cliche Odd Future deep v,
+    PBR&B Kickstarter narwhal.
+    Fanny pack Intelligentsia bitters, banjo ethical lomo literally mixtape aesthetic farm-to-table meh.
+  </p>
+</div>
+<h1>Increase with css</h1>
+
+<div class="box1">
+  <p>Disrupt forage vegan, keffiyeh mustache 90's Wes Anderson High Life Carles. Bicycle rights cred XOXO pop-up,
+    wolf selfies listicle mlkshk chillwave drinking vinegar paleo iPhone High Life roof party Marfa. Post-ironic kale
+    chips Pinterest keffiyeh Helvetica tofu. Pug lo-fi master cleanse polaroid. Kogi cliche Austin cold-pressed XOXO
+    Pitchfork, single-origin coffee Williamsburg Portland deep v. Meditation cornhole Williamsburg cliche Odd Future deep v,
+    PBR&B Kickstarter narwhal.
+    Fanny pack Intelligentsia bitters, banjo ethical lomo literally mixtape aesthetic farm-to-table meh.
+  </p>
+</div>
+<h2>Increase with animate</h2>
+<script>
+
+  $(document).ready(function () {
+
+    var $box = $('div.box'),
+        //old way to keep track of font-size
+        fontSize = parseInt($box.css('font-size'),10),
+        $box1 = $('div.box1');
+
+    console.log(fontSize);
+
+
+
+    $('h1').on('click', function () {
+      //more specific and efficient way to search by pre-pending div
+      $box.css({
+//        'font-size':fontSize +=5 old way...
+        //new way
+        'font-size': '+=5',
+        'color':'white',
+        width:'+=200'
+      })
+    })
+
+    //animate
+    $('h2').on('click', function () {
+      $box1.animate({
+        'font-size': '+=5',
+        'color':'white',
+        width:'+=200'
+
+      }, 3000, 'linear',function callBack(){
+
+      })
+    })
+  });
+
+</script>
+</body>
+</html>
