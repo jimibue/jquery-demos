@@ -3,8 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <script src="../jquery-1.11.3.min.js"></script>
+  <style>
+    body{
+      width: 400px;
+      margin: 100px;
+    }
+    .box{
+      width:500px;
+
+      overflow: hidden;
+      background-color: #91a7ff;
+      position: relative;
+      /*transition: 3s;*/
+    }
+    .rounded{
+      border-radius: 50px;
+    }
+    .hide{
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
+
+<h1>fade-slide-toggle me</h1>
+<div class="box">
+<p>Disrupt forage vegan, keffiyeh mustache 90's Wes Anderson High Life Carles. Bicycle rights cred XOXO pop-up,
+  wolf selfies listicle mlkshk chillwave drinking vinegar paleo iPhone High Life roof party Marfa. Post-ironic kale
+  chips Pinterest keffiyeh Helvetica tofu. Pug lo-fi master cleanse polaroid. Kogi cliche Austin cold-pressed XOXO
+  Pitchfork, single-origin coffee Williamsburg Portland deep v. Meditation cornhole Williamsburg cliche Odd Future deep v,
+  PBR&B Kickstarter narwhal.
+  Fanny pack Intelligentsia bitters, banjo ethical lomo literally mixtape aesthetic farm-to-table meh.</p>
+
+</div>
+<script>
+  $(document).ready(function () {
+    //cache
+    $box = $('div.box');
+
+//    $('h1').on('click',function(){
+//        var w = $(window).width()/2 - $box.outerWidth()/ 2,
+//            h = $(window).height()/2 - $box.outerHeight()/2;
+//      $box.animate({
+//        position:'absolute',
+//        'top':h
+//
+//
+//      },{duration:100})
+//          .animate({'fontSize':'+=10', 'left':w},{duration:2000, queue:false, complete:function(){$box.addClass('hide')}})
+//
+//    });
+
+    $.fn.slideToggle = function(speed, func){
+
+      //see if func is a function
+
+      $this = $(this);
+      return $this.animate({
+          height:'toggle',
+          opacity:'toggle'
+      },speed || 400, function() {
+        $.isFunction(func) && func.call(this)
+      })
+
+    };
+    $('h1').on('click', function(){
+      $box.slideToggle(1000,function(){console.log("working")}).addClass("test")
+    })
+
+
+
+
+
+  });
+</script>
 
 </body>
 </html>
